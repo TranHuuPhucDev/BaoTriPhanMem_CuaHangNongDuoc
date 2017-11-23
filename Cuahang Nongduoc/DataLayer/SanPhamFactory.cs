@@ -14,7 +14,6 @@ namespace CuahangNongduoc.DataLayer
         {
             OleDbCommand cmd = new OleDbCommand("SELECT * FROM SAN_PHAM");
             m_Ds.Load(cmd);
-
             return m_Ds;
         }
 

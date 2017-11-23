@@ -40,3 +40,4 @@ A:\BaoTriPhanMem_CuaHangNongDuoc\Cuahang Nongduoc\bin\Debug\CuahangNongduoc.pdb
 A:\BaoTriPhanMem_CuaHangNongDuoc\Cuahang Nongduoc\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 A:\BaoTriPhanMem_CuaHangNongDuoc\Cuahang Nongduoc\bin\Debug\Microsoft.ReportViewer.Common.dll
 A:\BaoTriPhanMem_CuaHangNongDuoc\Cuahang Nongduoc\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+A:\BaoTriPhanMem_CuaHangNongDuoc\Cuahang Nongduoc\obj\Debug\CuahangNongduoc.Resources.frmDichVu.resources
