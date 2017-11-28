@@ -15,19 +15,25 @@ namespace CuahangNongduoc.Controller
 
         public void HienthiAutoComboBox(System.Windows.Forms.ComboBox cmb)
         {
-            DataTable tbl = factory.DanhsachSanPham(); 
-            cmb.DataSource = tbl;
-            cmb.DisplayMember = "TEN_SAN_PHAM";
-            cmb.ValueMember = "ID";
+            DataTable tbl = factory.DanhsachSanPham();
+            if(tbl!=null)
+            {
+                cmb.DataSource = tbl;
+                cmb.DisplayMember = "TEN_SAN_PHAM";
+                cmb.ValueMember = "ID";
+            }
             cmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             cmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
         }
         public void HienthiDataGridViewComboBoxColumn(System.Windows.Forms.DataGridViewComboBoxColumn cmb)
         {
-            cmb.DataSource = factory.DanhsachSanPham();
-            cmb.DisplayMember = "TEN_SAN_PHAM";
-            cmb.ValueMember = "ID";
-            cmb.AutoComplete = true;
+            if (factory.DanhsachSanPham()!=null)
+            {
+                cmb.DataSource = factory.DanhsachSanPham();
+                cmb.DisplayMember = "TEN_SAN_PHAM";
+                cmb.ValueMember = "ID";
+                cmb.AutoComplete = true;
+            }
         }
         public void TimMaSanPham(String ma)
         {

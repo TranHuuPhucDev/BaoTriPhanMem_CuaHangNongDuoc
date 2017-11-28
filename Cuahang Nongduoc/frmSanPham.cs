@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using CuahangNongduoc.Controller;
+using CuahangNongduoc.DataLayer;
 
 namespace CuahangNongduoc
 {
@@ -21,6 +22,7 @@ namespace CuahangNongduoc
 
         private void frmSanPham_Load(object sender, EventArgs e)
         {
+            
             ctrlDVT.HienthiAutoComboBox(cmbDVT);
             dataGridView.Columns.Add(ctrlDVT.HienthiDataGridViewComboBoxColumn());
             ctrl.HienthiDataGridview(dataGridView, bindingNavigator,

@@ -16,18 +16,24 @@ namespace CuahangNongduoc.Controller
         {
             DataTable tbl = factory.DanhsachDVT();
             cmb.DataSource = tbl;
-            cmb.DisplayMember = "TEN_DON_VI";
-            cmb.ValueMember = "ID";
+            if (tbl != null)
+            {
+                cmb.DisplayMember = "TEN_DON_VI";
+                cmb.ValueMember = "ID";
+            }
         }
         public System.Windows.Forms.DataGridViewComboBoxColumn HienthiDataGridViewComboBoxColumn()
         {
             System.Windows.Forms.DataGridViewComboBoxColumn cmb = new System.Windows.Forms.DataGridViewComboBoxColumn();
             DataTable tbl = factory.DanhsachDVT();
-            cmb.DataSource = tbl;
-            cmb.DisplayMember = "TEN_DON_VI";
-            cmb.ValueMember = "ID";
-            cmb.DataPropertyName = "ID_DON_VI_TINH";
-            cmb.HeaderText = "Đơn vị tính";
+            if (tbl != null)
+            {
+                cmb.DataSource = tbl;
+                cmb.DisplayMember = "TEN_DON_VI";
+                cmb.ValueMember = "ID";
+                cmb.DataPropertyName = "ID_DON_VI_TINH";
+                cmb.HeaderText = "Đơn vị tính";
+            }
             return cmb;
         }
         public void HienthiDataGridview(System.Windows.Forms.DataGridView dg, System.Windows.Forms.BindingNavigator bn)

@@ -12,14 +12,16 @@ namespace CuahangNongduoc
 		private static OleDbConnection	m_Connection;
 
         //
-        public static String m_ConnectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=cuahang.dll;";
+        public static String m_ConnectString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=cuahang.accdb";
 		// The command to execute query or non-query command on a database of this data service.
 		private OleDbCommand		m_Command;
       
 		// The data adapter to execute query on a database of this data service.
 		private OleDbDataAdapter	m_DataAdapter;
 
-        public DataService(){}
+        public DataService(){
+            OpenConnection();
+        }
 
 
         public OleDbCommand Command
@@ -51,31 +53,32 @@ namespace CuahangNongduoc
 		}
 
 
-        public static bool OpenConnection()
+        public static String OpenConnection()
         {
             try
             {
                 if (m_Connection == null)
                     //m_Connection = new OleDbConnection("Data Source=LAPTOP07\\OleDbEXPRESS;Initial Catalog=VCB;Integrated Security=True;");
-                    //m_Connection = new OleDbConnection("Data Source=localhost;Initial Catalog=phongkham;User ID=sa; Password=tvteo;");
+                    //m_Connection = new OleDbConnection("Data Source=localhost;Initial Catalog=cuahang.dll");
+                    //Provider=Microsoft.Jet.OLEDB.4.0;Data Source="A:\BaoTriPhanMem_CuaHangNongDuoc\Cuahang Nongduoc\bin\Debug\cuahang.dll"
                     m_Connection = new OleDbConnection(m_ConnectString);
                     
                     
                 if (m_Connection.State == ConnectionState.Closed)
                     m_Connection.Open();
-                return true;
+                return "";
             }
             catch (Exception e)
             {
                 m_Connection.Close();
-                return false;
+                return e.Message;
             }
             
         }
 		/// <summary>
 		/// Closes the connection of this data service.
 		/// </summary>
-		public void CloseConnection()
+		public static void CloseConnection()
 		{
 			m_Connection.Close();
 		}
@@ -152,7 +155,7 @@ namespace CuahangNongduoc
         {
             object result = null;
             OleDbTransaction tr = null;
-            
+
             try
             {
                 tr = m_Connection.BeginTransaction();

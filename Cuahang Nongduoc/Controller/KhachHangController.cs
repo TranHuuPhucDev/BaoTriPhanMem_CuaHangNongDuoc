@@ -14,9 +14,13 @@ namespace CuahangNongduoc.Controller
 
         public void HienthiAutoComboBox(System.Windows.Forms.ComboBox cmb, bool loai)
         {
-            cmb.DataSource = factory.DanhsachKhachHang(loai);
-            cmb.DisplayMember = "HO_TEN";
-            cmb.ValueMember = "ID";
+            try
+            {
+                cmb.DataSource = factory.DanhsachKhachHang(loai);
+                cmb.DisplayMember = "HO_TEN";
+                cmb.ValueMember = "ID";
+            }
+            catch(Exception ex) { }
         }
         public void HienthiChungAutoComboBox(System.Windows.Forms.ComboBox cmb)
         {

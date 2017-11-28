@@ -67,25 +67,29 @@ namespace CuahangNongduoc.Controller
         public void HienthiPhieuBan(BindingNavigator bn,ComboBox cmb, TextBox txt, DateTimePicker dt, NumericUpDown numTongTien, NumericUpDown numDatra, NumericUpDown numConNo)
         {
 
-            bn.BindingSource = bs;
+            try
+            {
+                bn.BindingSource = bs;
 
-            txt.DataBindings.Clear();
-            txt.DataBindings.Add("Text", bs, "ID");
+                txt.DataBindings.Clear();
+                txt.DataBindings.Add("Text", bs, "ID");
 
-            cmb.DataBindings.Clear();
-            cmb.DataBindings.Add("SelectedValue", bs, "ID_KHACH_HANG");
+                cmb.DataBindings.Clear();
+                cmb.DataBindings.Add("SelectedValue", bs, "ID_KHACH_HANG");
 
-            dt.DataBindings.Clear();
-            dt.DataBindings.Add("Value", bs, "NGAY_BAN");
+                dt.DataBindings.Clear();
+                dt.DataBindings.Add("Value", bs, "NGAY_BAN");
 
-            numTongTien.DataBindings.Clear();
-            numTongTien.DataBindings.Add("Value", bs, "TONG_TIEN");
+                numTongTien.DataBindings.Clear();
+                numTongTien.DataBindings.Add("Value", bs, "TONG_TIEN");
 
-            numDatra.DataBindings.Clear();
-            numDatra.DataBindings.Add("Value", bs, "DA_TRA");
+                numDatra.DataBindings.Clear();
+                numDatra.DataBindings.Add("Value", bs, "DA_TRA");
 
-            numConNo.DataBindings.Clear();
-            numConNo.DataBindings.Add("Value", bs, "CON_NO");
+                numConNo.DataBindings.Clear();
+                numConNo.DataBindings.Add("Value", bs, "CON_NO");
+            }
+            catch(Exception ex) { }
 
 
         }
